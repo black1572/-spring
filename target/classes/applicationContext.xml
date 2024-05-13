@@ -8,7 +8,7 @@
 
     <context:annotation-config/>
 
-    <bean id="ds" class="spring.JDBCDataSource">
+<!--    <bean id="ds" class="spring.JDBCDataSource">
         <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://localhost:3306/mybatis"/>
         <property name="username" value="root"/>
@@ -27,6 +27,11 @@
 
     <bean id="user" class="entity.User">
         <constructor-arg name="userName" value="tom"></constructor-arg>
-    </bean>
+    </bean>-->
+
+    <!--开启注解扫描-->
+    <context:component-scan base-package="dao,entity,Service,spring,main,Bean">
+
+    </context:component-scan>
 
 </beans>

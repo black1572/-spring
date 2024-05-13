@@ -9,5 +9,8 @@
         <module name="SpringTest" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Text3" target="18" />
+    </bytecodeTargetLevel>
   </component>
 </project>
