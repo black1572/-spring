@@ -2,6 +2,9 @@ package com.text.dao;
 
 import com.text.entity.User;
 import com.text.spring.JDBCDataSource;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.sql.Connection;
@@ -9,18 +12,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-@Service
+@Repository("userDao")
 public class MysqlUserDao implements UserDao {
 
     private JDBCDataSource dataSource;
-
     public MysqlUserDao(JDBCDataSource dataSource) {
         this.dataSource = dataSource;
     }
 
-
-
-
+    @Autowired
+    public void setDataSource(@Qualifier("JDBCDataSource") JDBCDataSource dataSource) {
+        this.dataSource = dataSource;
+    }
 
     @Override
     public User findByName(String name) {
