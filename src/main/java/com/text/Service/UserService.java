@@ -1,8 +1,10 @@
-package Service;
+package com.text.Service;
 
-import dao.UserDao;
-import entity.User;
+import com.text.dao.UserDao;
+import com.text.entity.User;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserService {
     private UserDao userDao;
 

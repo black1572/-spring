@@ -1,6 +1,6 @@
-package dao;
+package com.text.dao;
 
-import entity.User;
+import com.text.entity.User;
 
 public interface UserDao {
     public User findByName(String username);

@@ -1,14 +1,15 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd">
+        http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
 
     <context:annotation-config/>
 
-<!--    <bean id="ds" class="spring.JDBCDataSource">
+<!--    <bean id="ds" class="com.text.spring.JDBCDataSource">
         <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://localhost:3306/mybatis"/>
         <property name="username" value="root"/>
@@ -18,20 +19,23 @@
         <property name="dataSource" ref="ds"/>
     </bean>
 
-    <bean id="userDao" class="dao.MysqlUserDao">
+    <bean id="userDao" class="com.text.dao.MysqlUserDao">
         <constructor-arg index="0" ref="ds"></constructor-arg>
     </bean>
 
-    <bean id="userService" class="Service.UserService" autowire="byType">
+    <bean id="userService" class="com.text.Service.UserService" autowire="byType">
     </bean>
 
-    <bean id="user" class="entity.User">
+    <bean id="user" class="com.text.entity.User">
         <constructor-arg name="userName" value="tom"></constructor-arg>
     </bean>-->
 
+    <util:properties id="jdbcProps" location="classpath:db.properties"/>
     <!--开启注解扫描-->
-    <context:component-scan base-package="dao,entity,Service,spring,main,Bean">
+    <context:component-scan base-package="com.text">
 
     </context:component-scan>
+
+
 
 </beans>

@@ -1,4 +1,7 @@
-package spring;
+package com.text.spring;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
 import java.io.PrintWriter;
@@ -7,14 +10,18 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.SQLFeatureNotSupportedException;
 import java.util.logging.Logger;
-
+@Component
 public class JDBCDataSource implements DataSource {
 
     private String driver;
+    @Value("#{jdbcProps.url}")
     private String url;
+    @Value("#{jdbcProps.username}")
     private String username;
+    @Value("#{jdbcProps.password}")
     private String password;
 
+    @Value("#{jdbcProps.driver}")
     //加载驱动
     public void setDriver(String driver) {
         try{

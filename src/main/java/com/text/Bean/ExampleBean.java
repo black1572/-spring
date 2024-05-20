@@ -1,9 +1,9 @@
-package Bean;
+package com.text.Bean;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Scope("singleton")
+@Scope("prototype")
 @Component
 public class ExampleBean {
 

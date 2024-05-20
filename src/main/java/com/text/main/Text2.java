@@ -1,6 +1,6 @@
-package main;
+package com.text.main;
 
-import Bean.ExampleBean;
+import com.text.Bean.ExampleBean;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

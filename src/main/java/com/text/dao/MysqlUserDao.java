@@ -1,13 +1,15 @@
-package dao;
+package com.text.dao;
 
-import entity.User;
-import spring.JDBCDataSource;
+import com.text.entity.User;
+import com.text.spring.JDBCDataSource;
+import org.springframework.stereotype.Service;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+@Service
 public class MysqlUserDao implements UserDao {
 
     private JDBCDataSource dataSource;
